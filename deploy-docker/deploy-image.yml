@@ -1,6 +1,6 @@
 ---
 - name: Pull docker image of Lab3Junit
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Pull junit devops image
       docker_image:
