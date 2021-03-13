@@ -3,28 +3,41 @@ import static org.junit.Assert.*;
 
 public class Calculatortest {
 
+    Calculator calc = new Calculator();
+    private static final double delta = 1e-15;	
+
     @BeforeClass
     public static void beforeCalculatorClass(){
         System.out.println("Before Calculator Class Testing");
     }
 
-    @Before
-    public void beforeCalculatorTest(){
-        System.out.println("Before Calculator Testing");
+
+    @Test
+    public void truePositiveSqrtvalue() {
+        assertEquals(calc.square_root(9.0), 3, delta);
+
     }
 
     @Test
-    public void truePositiveCalcvalue() {
-        Calculator calc = new Calculator();
-        assertEquals(calc.multiply(2,3), 6);
+    public void truePositiveFactvalue() {
+        assertEquals(calc.factorial(4), 24);
+
+    }
+
+    @Test
+    public void truePositiveNlogvalue() {
+        assertEquals(calc.natural_log(10.0), 2.302585092994046, delta);
+
+    }
+
+    @Test
+    public void truePositivePowervalue() {
+        assertEquals(calc.power_fn(3.0, 4.0), 81.0, delta);
 
     }
 
 
-    @After
-    public void afterCalculatorTest(){
-        System.out.println("After Calculator Testing");
-    }
+    
 
     @AfterClass
     public static void afterCalculatorClass(){
